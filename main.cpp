@@ -13,6 +13,6 @@ int main()
     cout<< "nos folhas";
     cout << arv.contaNosFolhas();
     cout<<"\n Altura\n";
-    cout<<arv.altura();
+    cout<<arv.conta();
     return 0;
 }

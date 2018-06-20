@@ -160,11 +160,17 @@ int ArvBin::conta()
 
 int ArvBin::auxConta(NoArv *p)
 {
-    if(p)
+    if(!p)
     {
-        return 1+ auxConta(p->getEsq())+ auxConta(p->getDir());
+        return 0;
     }
-    return 0;
+    else
+    {
+        int he=  auxConta(p->getEsq());
+        int hd = auxConta(p->getDir());
+        return 1+he+hd;
+    }
+
 }
 int ArvBin::contaNosFolhas()
 {
@@ -199,10 +205,12 @@ int ArvBin::auxAltura(NoArv *p)
     {
         int he = auxAltura(p->getEsq());
         int hd = auxAltura(p->getDir());
-        if(he>hd) {
+        if(he>hd)
+        {
             return 1+ he;
         }
-        else {
+        else
+        {
             return 1+hd;
         }
     }
